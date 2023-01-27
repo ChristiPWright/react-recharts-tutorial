@@ -5,13 +5,12 @@ import {
     YAxis, 
     CartesianGrid, 
     Tooltip, 
-    Legend, 
     ResponsiveContainer
   } from "recharts";
 
 export default function Chart({ data }) {
     return (
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="100%" height={400}>
             <LineChart
                 width={500}
                 height={300}
@@ -23,13 +22,11 @@ export default function Chart({ data }) {
                     bottom: 5,
                 }}
             >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="date" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Line type="monotone" dataKey="priceUsd" stroke="#8884d8" />
-            <Line type="monotone" dataKey="date" stroke="#82ca9d" />
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="time" />
+                <YAxis />
+                <Tooltip />
+                <Line type="monotone" dataKey="priceUsd" stroke="#8884d8" activeDot={{ r: 8 }}/>
             </LineChart>
         </ResponsiveContainer>
     );
