@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Chart from "./Chart";
 
 export default function App() {
   const [data, setdata] = useState();
@@ -14,5 +15,10 @@ export default function App() {
     fetchDatas();
   }, []);
 
-  return <div className="App">How to use Recharts with React</div>;
+  return (
+    <div className="App">
+      How to use Recharts with React
+      <Chart data={data} />
+    </div>
+  );
 }
